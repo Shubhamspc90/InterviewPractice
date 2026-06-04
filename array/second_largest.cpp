@@ -74,7 +74,39 @@
 // }
 
 
-///
+/// 
+
+// // this will work but not for single elemnt 
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+
+//     int arr[] = {2};
+
+//     int n = sizeof(arr) / sizeof(arr[0]);
+
+//     int largest = arr[0];
+//     int secondLargest = arr[0];
+
+//     for(int i = 1; i < n; i++) {
+
+//         if(arr[i] > largest) {
+//             secondLargest = largest;
+//             largest = arr[i];
+//         }
+//         else if(arr[i] > secondLargest && arr[i] != largest) {
+//             secondLargest = arr[i];
+//         }
+//     }
+
+//     cout << "Largest = " << largest << endl;
+//     cout << "Second Largest = " << secondLargest;
+
+//     return 0;
+// }
+
+
 #include <iostream>
 using namespace std;
 
@@ -85,21 +117,28 @@ int main() {
     int n = sizeof(arr) / sizeof(arr[0]);
 
     int largest = arr[0];
-    int secondLargest = arr[0];
+    int secondLargest = -1;
 
     for(int i = 1; i < n; i++) {
 
         if(arr[i] > largest) {
+
             secondLargest = largest;
             largest = arr[i];
         }
-        else if(arr[i] > secondLargest && arr[i] != largest) {
+        else if(arr[i] != largest &&
+               (secondLargest == -1 || arr[i] > secondLargest)) {
+
             secondLargest = arr[i];
         }
     }
 
     cout << "Largest = " << largest << endl;
-    cout << "Second Largest = " << secondLargest;
+
+    if(secondLargest == -1)
+        cout << "No second largest distinct element";
+    else
+        cout << "Second Largest = " << secondLargest;
 
     return 0;
 }
