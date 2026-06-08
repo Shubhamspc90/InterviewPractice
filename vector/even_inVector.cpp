@@ -15,6 +15,10 @@ int main(){
             cout<<val<<" ";
         }
     }
+    // using Lambda Function 
+    int even_count=count_if(vec.begin(),vec.end(), 
+                            [] (int x){return x%2==0;});
+    cout<<"\nNo. of Even number in vector: "<<even_count<<endl;
 
     return 0;
 }
