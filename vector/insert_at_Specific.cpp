@@ -11,16 +11,21 @@ int main(){
     } 
 
     int position;
-    cout<<"Enter the position on which you want to insert "<<endl;
+    cout<<"\nEnter the position on to insert "<<endl;
     cin>>position;
 
-    int num;
-    cout<<"Enter the number "<<endl;
-    cin>>num;
-   
-    vec.insert(vec.begin()+position,num);
-    for(int v:vec){
-        cout<<v<<" ";
+    if(position>=0 && position <=vec.size()){
+        int num;
+        cout<<"Enter the number "<<endl;
+        cin>>num;
+       
+        vec.insert(vec.begin()+position,num);
+        for(int v:vec){
+            cout<<v<<" ";
+        }
+
+    }else{
+        cout<<" wrong postion entered"<<endl;
     }
 
     return 0;
