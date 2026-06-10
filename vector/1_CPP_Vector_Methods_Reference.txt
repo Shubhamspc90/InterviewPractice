@@ -1,0 +1,390 @@
+
+C++ VECTOR METHODS REFERENCE
+============================
+
+1. assign()
+-----------
+Purpose: Replaces the contents of a vector with new values.
+When to use: Reset a vector with specific values.
+
+Code:
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+    vector<int> vec1;
+    vec1.assign(5, 10);
+
+    for(int v : vec1) cout << v << " ";
+}
+
+Output:
+10 10 10 10 10
+
+
+2. at()
+-------
+Purpose: Access element with bounds checking.
+When to use: Safer alternative to [].
+
+Code:
+vector<int> vec1 = {10,20,30};
+cout << vec1.at(1);
+
+Output:
+20
+
+
+3. back()
+---------
+Purpose: Returns last element.
+
+Code:
+vector<int> vec1 = {10,20,30};
+cout << vec1.back();
+
+Output:
+30
+
+
+4. begin()
+----------
+Purpose: Returns iterator to first element.
+
+Code:
+vector<int> vec1 = {10,20,30};
+cout << *vec1.begin();
+
+Output:
+10
+
+
+5. capacity()
+-------------
+Purpose: Shows allocated storage.
+
+Code:
+vector<int> vec1 = {1,2,3};
+cout << vec1.capacity();
+
+Output:
+3 (or more)
+
+
+6. cbegin()
+-----------
+Purpose: Constant iterator to first element.
+
+Code:
+vector<int> vec1={1,2,3};
+cout<<*vec1.cbegin();
+
+Output:
+1
+
+
+7. cend()
+---------
+Purpose: Constant iterator after last element.
+
+Code:
+vector<int> vec1={1,2,3};
+cout<<(vec1.cend()-vec1.cbegin());
+
+Output:
+3
+
+
+8. clear()
+----------
+Purpose: Removes all elements.
+
+Code:
+vector<int> vec1={1,2,3};
+vec1.clear();
+cout<<vec1.size();
+
+Output:
+0
+
+
+9. crbegin()
+------------
+Purpose: Constant reverse begin iterator.
+
+Code:
+vector<int> vec1={1,2,3};
+cout<<*vec1.crbegin();
+
+Output:
+3
+
+
+10. crend()
+-----------
+Purpose: Constant reverse end iterator.
+
+Code:
+vector<int> vec1={1,2,3};
+cout<<(vec1.crend()-vec1.crbegin());
+
+Output:
+3
+
+
+11. data()
+----------
+Purpose: Returns pointer to underlying array.
+
+Code:
+vector<int> vec1={10,20,30};
+cout<<vec1.data()[0];
+
+Output:
+10
+
+
+12. emplace()
+-------------
+Purpose: Inserts element at specified position.
+
+Code:
+vector<int> vec1={1,2,4};
+vec1.emplace(vec1.begin()+2,3);
+
+Output:
+1 2 3 4
+
+
+13. emplace_back()
+------------------
+Purpose: Constructs element at end.
+
+Code:
+vector<int> vec1={1,2};
+vec1.emplace_back(3);
+
+Output:
+1 2 3
+
+
+14. empty()
+-----------
+Purpose: Checks whether vector is empty.
+
+Code:
+vector<int> vec1;
+cout<<vec1.empty();
+
+Output:
+1
+
+
+15. end()
+---------
+Purpose: Iterator after last element.
+
+Code:
+vector<int> vec1={1,2,3};
+cout<<(vec1.end()-vec1.begin());
+
+Output:
+3
+
+
+16. erase()
+-----------
+Purpose: Remove element(s).
+
+Code:
+vector<int> vec1={1,2,3,4};
+vec1.erase(vec1.begin()+1);
+
+Output:
+1 3 4
+
+
+17. front()
+-----------
+Purpose: First element.
+
+Code:
+vector<int> vec1={10,20,30};
+cout<<vec1.front();
+
+Output:
+10
+
+
+18. get_allocator()
+-------------------
+Purpose: Returns allocator object.
+
+Code:
+vector<int> vec1;
+auto a = vec1.get_allocator();
+
+Output:
+Allocator returned
+
+
+19. insert()
+------------
+Purpose: Insert element at position.
+
+Code:
+vector<int> vec1={1,3,4};
+vec1.insert(vec1.begin()+1,2);
+
+Output:
+1 2 3 4
+
+
+20. max_size()
+--------------
+Purpose: Maximum possible elements.
+
+Code:
+vector<int> vec1;
+cout<<vec1.max_size();
+
+Output:
+Very large number
+
+
+21. operator=
+-------------
+Purpose: Copy one vector to another.
+
+Code:
+vector<int> vec1={1,2,3};
+vector<int> vec2;
+vec2=vec1;
+
+Output:
+1 2 3
+
+
+22. operator[]
+--------------
+Purpose: Direct access.
+
+Code:
+vector<int> vec1={10,20,30};
+cout<<vec1[1];
+
+Output:
+20
+
+
+23. pop_back()
+--------------
+Purpose: Remove last element.
+
+Code:
+vector<int> vec1={1,2,3};
+vec1.pop_back();
+
+Output:
+1 2
+
+
+24. push_back()
+---------------
+Purpose: Add element at end.
+
+Code:
+vector<int> vec1={1,2};
+vec1.push_back(3);
+
+Output:
+1 2 3
+
+
+25. rbegin()
+------------
+Purpose: Reverse begin iterator.
+
+Code:
+vector<int> vec1={1,2,3};
+cout<<*vec1.rbegin();
+
+Output:
+3
+
+
+26. rend()
+----------
+Purpose: Reverse end iterator.
+
+Code:
+vector<int> vec1={1,2,3};
+cout<<(vec1.rend()-vec1.rbegin());
+
+Output:
+3
+
+
+27. reserve()
+-------------
+Purpose: Reserve memory.
+
+Code:
+vector<int> vec1;
+vec1.reserve(100);
+
+Output:
+Capacity >= 100
+
+
+28. resize()
+------------
+Purpose: Change size.
+
+Code:
+vector<int> vec1={1,2,3};
+vec1.resize(5,0);
+
+Output:
+1 2 3 0 0
+
+
+29. shrink_to_fit()
+-------------------
+Purpose: Reduce unused capacity.
+
+Code:
+vector<int> vec1;
+vec1.reserve(100);
+vec1.shrink_to_fit();
+
+Output:
+Capacity reduced
+
+
+30. size()
+----------
+Purpose: Number of elements.
+
+Code:
+vector<int> vec1={1,2,3};
+cout<<vec1.size();
+
+Output:
+3
+
+
+31. swap()
+----------
+Purpose: Exchange contents.
+
+Code:
+vector<int> vec1={1,2};
+vector<int> vec2={10,20};
+
+vec1.swap(vec2);
+
+Output:
+vec1 = 10 20
+vec2 = 1 2
