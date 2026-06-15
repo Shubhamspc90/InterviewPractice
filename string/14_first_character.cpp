@@ -8,8 +8,8 @@ int main(){
     getline(cin,str);
 
     // // method 1
-    if(!str.empty())
-    cout << str[0];
+    // if(!str.empty())
+    // cout << str[0];
 
     // // method 2
     // for(int i=0;i<str.length();i++){
@@ -33,6 +33,11 @@ int main(){
     //     cout<<ch;
     //     break;
     // }
+
+    // // method 6
+    if(!str.empty()){
+        cout<<str[0];
+    }
     
     
     
