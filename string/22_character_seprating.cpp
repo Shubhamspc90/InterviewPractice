@@ -13,6 +13,5 @@ int main(){
     for(char ch: str){
         cout<<ch<<" ";
     }
-
     return 0;
 }
