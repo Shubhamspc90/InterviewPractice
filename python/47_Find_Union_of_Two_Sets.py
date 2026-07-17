@@ -1,0 +1,10 @@
+# Find Union of Two Sets
+
+s1 = {1,2,3,4}
+s2 = {5,6,7,8,9}
+
+s3 = s1.union(s2)
+print(s1)
+print("After union")
+print(s2)
+print(s3)
