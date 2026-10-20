@@ -1,0 +1,11 @@
+StudentID,Name,Age,Gender,Department,Marks,Attendance,City,Passed
+101,Aarav Sharma,20,Male,Computer Science,87,92,Delhi,True
+102,Priya Verma,21,Female,Mathematics,92,96,Ghaziabad,True
+103,Rahul Singh,19,Male,Computer Science,74,78,Noida,True
+104,Ananya Gupta,22,Female,Physics,88,89,Delhi,True
+105,Vikram Patel,20,Male,Information Technology,39,72,Meerut,False
+106,Neha Kumari,21,Female,Computer Science,95,98,Noida,True
+107,Arjun Mehta,23,Male,Mathematics,81,85,Ghaziabad,True
+108,Sneha Yadav,19,Female,Information Technology,57,80,Delhi,True
+109,Rohan Das,22,Male,Physics,32,87,Meerut,False
+110,Isha Khan,20,Female,Computer Science,90,94,Noida,True
