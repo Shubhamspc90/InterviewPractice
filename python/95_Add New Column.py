@@ -33,3 +33,19 @@ df["Grade"] = df["Marks"].apply(
 )
 
 print(df)
+
+#  method 2
+
+import pandas as pd
+
+df = pd.read_csv("./python/student.csv")
+
+filtered_df = df[df["Marks"] > 85].copy()
+
+# Grade ki jagah 'Performance' column add kar rahe hain
+filtered_df["Performance"] = filtered_df["Marks"].apply(
+    lambda x: "Outstanding" if x >= 90 else "Excellent"
+)
+
+print("Students who scored more than 85 marks:")
+print(filtered_df)
